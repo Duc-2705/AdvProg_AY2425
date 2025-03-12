@@ -26,7 +26,6 @@ int generateRandomNumber() {
 ***/
 int getPlayerGuess() {
     // TODO: Ask the player guest and return the player's number
-    cout << "Guess the number: ";
     int n;
     cin >> n;
     return n;
@@ -78,7 +77,7 @@ bool checkSuccess(string answer) {
 bool checkContinuePlaying(char isContinued) {
     // TODO: return result after checking player continue playing or not
     bool result = false;
-    if (isContinued == 'Y') result = true;
+    if (isContinued == 'Y' || isContinued == 'y') result = true;
     return result;
 }
 
@@ -92,11 +91,8 @@ bool checkContinuePlaying(char isContinued) {
 char getPlayerOpinion() {
     // TODO: Ask the player about continue playing and return the player's choice
     char isContinued;
-    do 
-    {
-        cout << "Do you want to continue playing? (Y/N) ";
-        cin >> isContinued;
-    } while (isContinued != 'Y' && isContinued != 'N');
+
+    cin >> isContinued;
     
     return isContinued;
 }
